@@ -1,0 +1,106 @@
+<!-- User View -->
+<div class="container mt-3" *ngIf="role !== 'admin'; else callAdmin">
+  <div class="mb-4 text-center">
+    <button class="sort-btn" (click)="sortMovies()">
+      <i class="fas fa-sort me-2"></i> Sort Movies
+    </button>
+  </div>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="col" *ngFor="let movie of paginatedMovies">
+      <div class="movie-card user-card" (click)="goToMovieDetails(movie.movieName)">
+        <div class="movie-poster">
+          <img [src]="movie.img || 'https://images.pexels.com/photos/534590/pexels-photo-534590.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'" 
+               alt="{{movie.movieName}} poster">
+          <div class="movie-overlay">
+            <div class="movie-info">
+              <h5 class="movie-title">{{movie.movieName}}</h5>
+              <p class="movie-genre">{{movie.movieGenre}}</p>
+            </div>
+          </div>
+          <div class="hover-effect">
+            <i class="fas fa-eye"></i>
+            <span>View Details</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <nav class="d-flex justify-content-center mt-4" *ngIf="totalPages > 1">
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="changePage(currentPage - 1)">Previous</a>
+      </li>
+
+      <li class="page-item"
+          *ngFor="let page of [].constructor(totalPages); let i = index"
+          [class.active]="i + 1 === currentPage">
+        <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
+      </li>
+
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- Admin View -->
+<ng-template #callAdmin>
+  <div class="admin-container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <div class="col" *ngFor="let movie of paginatedMovies">
+        <div class="movie-card admin-card">
+          <div class="movie-poster">
+            <img [src]="movie.img || 'https://images.pexels.com/photos/534590/pexels-photo-534590.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'" 
+                 alt="{{movie.movieName}} poster">
+            <div class="movie-rating">
+              <span>{{movie.movieRating}}</span>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="hover-effect">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+          
+          <div class="movie-details">
+            <div class="detail-item"><i class="fas fa-film"></i><span>{{movie.movieName}}</span></div>
+            <div class="detail-item"><i class="fas fa-tag"></i><span>{{movie.movieGenre}}</span></div>
+            <div class="detail-item"><i class="fas fa-language"></i><span>{{getLanguageNameByCode(movie.movieLanguage)}}</span></div>
+            <div class="detail-item"><i class="fas fa-calendar-alt"></i><span>{{movie.movieReleaseDate}}</span></div>
+          </div>
+          
+          <div class="movie-actions">
+            <button class="btn-icon btn-edit" (click)="goToEditPage(movie); $event.stopPropagation()" title="Edit Movie">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon btn-delete" (click)="goToDeletePage(movie.movieName); $event.stopPropagation()" title="Delete Movie">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination for Admin -->
+    <nav class="d-flex justify-content-center mt-4" *ngIf="totalPages > 1">
+      <ul class="pagination">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <a class="page-link" (click)="changePage(currentPage - 1)">Previous</a>
+        </li>
+
+        <li class="page-item"
+            *ngFor="let page of [].constructor(totalPages); let i = index"
+            [class.active]="i + 1 === currentPage">
+          <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
+        </li>
+
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</ng-template>

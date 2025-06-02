@@ -1,0 +1,62 @@
+<div class="home-container">
+  <!-- Featured Carousel -->
+  <div *ngIf="availableGenres.length > 0" class="hero-carousel mb-5">
+    <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div *ngFor="let movie of moviesByGenre[availableGenres[0]]?.slice(0, 5); let i = index" 
+             class="carousel-item" [class.active]="i === 0">
+          <img [src]="movie.img" class="d-block w-100" [alt]="movie.movieName">
+          <div class="carousel-caption">
+            <h3>{{movie.movieName}}</h3>
+            <p>{{movie.movieDescription | slice:0:100}}...</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Genre Carousels -->
+  <div *ngFor="let genre of availableGenres" class="genre-section mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="genre-title">{{genre}} Movies</h3>
+    </div>
+    
+    <div class="position-relative">
+      <div [id]="getCarouselId(genre)" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          <div *ngFor="let chunk of chunkedMoviesByGenre[genre]; let i = index" 
+               class="carousel-item" [class.active]="i === 0">
+            <div class="row g-3">
+              <div *ngFor="let movie of chunk" class="col-md-2 col-4">
+                <div class="movie-card">
+                  <img [src]="movie.img" class="card-img-top" [alt]="movie.movieName">
+                  <div class="card-body">
+                    <h5 class="movie-title">{{movie.movieName}}</h5>
+                    <div class="d-flex justify-content-between">
+                      <span class="rating">{{movie.movieRating}}</span>
+                      <span class="year">{{movie.movieReleaseDate | date: 'yyyy'}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button *ngIf="chunkedMoviesByGenre[genre]?.length > 1" class="carousel-control carousel-control-prev" 
+                type="button" [attr.data-bs-target]="'#' + getCarouselId(genre)" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button *ngIf="chunkedMoviesByGenre[genre]?.length > 1" class="carousel-control carousel-control-next" 
+                type="button" [attr.data-bs-target]="'#' + getCarouselId(genre)" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

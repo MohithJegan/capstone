@@ -1,0 +1,137 @@
+<div *ngIf="userServiceObj.dataOfLoggedUserBehaviourSubject.getValue()==null">
+    <nav class="navbar navbar-dark navbar-expand-lg shadow p-1 align-items-center">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-5 " href="#"><img src="/assets/log.png" alt="logo" class="logo align-middle align-items-center align-self-center"><span class="align-middle align-items-center align-self-center">CINEMATA</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-center bg-dark" tabindex="-1" id="offcanvasNavbar" data-bs-backdrop="false">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="" class="nav-link" routerLink="home" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-house text-blue"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link" routerLink="genre" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-address-book text-blue"></i> Genre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link" routerLink="login" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show" ><i class="fa-solid fa-right-to-bracket text-blue"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link" routerLink="signup" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-circle-check text-blue"></i> Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>      
+</div>
+
+<div *ngIf="userServiceObj.dataOfLoggedUserBehaviourSubject.getValue()!==null && userServiceObj.dataOfLoggedUserBehaviourSubject.getValue().username !== 'Raju'">
+    <nav class="navbar navbar-expand-sm navbar-dark shadow">
+        <a href="" class="navbar-brand px-2 fw-bold fs-5 align-self-center text-center"><img src="/assets/log.png" alt="logo" class="logo align-middle align-items-center align-self-center"><span class="align-middle align-items-center align-self-center">CINEMATA</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#my">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <!-- search box -->
+<div class="mx-auto" style="width: 60%;">
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-search"></i>
+        </span>
+        <input type="text" class="form-control search-box" 
+               [(ngModel)]="searchTerm" 
+               (keyup)="searchFor()" 
+               placeholder="Search for movies...">
+    </div>
+</div>
+        <div class="collapse navbar-collapse me-2 me-sm-5" id="my">
+            <ul class="navbar-nav ms-auto ms-1 me-2 me-sm-5 mx-4">
+                <li class="nav-item dropdown align-items-center ms-4 p-2 p-sm-0">
+                    <a class="nav-link dropdown-toggle align-self-center px-sm-2 px-0 text-sm-center" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-circle-user text-blue fs-4 align-middle align-self-center"></i> <span class="align-middle align-self-center text-white"> {{userServiceObj.dataOfLoggedUserBehaviourSubject.getValue().username | titlecase}}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-start menucls" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink="/user/viewmovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                                <i class="fa-solid fa-film"></i> View Movies
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink="/user/userprofile" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                                <i class="fa-solid fa-address-card"></i> Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink="/user/setting" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                                <i class="bi bi-gear-fill"></i> Settings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink="login" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show" (click)="userServiceObj.logoutUser()">
+                                <i class="fa-solid fa-right-from-bracket"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div *ngIf="userServiceObj.dataOfLoggedUserBehaviourSubject.getValue()!==null && userServiceObj.dataOfLoggedUserBehaviourSubject.getValue().username == 'Raju'">
+    <nav class="navbar navbar-expand-sm navbar-dark shadow">
+        <a href="" class="navbar-brand px-2 fw-bold fs-5 align-self-center text-center"><img src="/assets/log.png" alt="logo" class="logo align-middle align-items-center align-self-center"><span class="align-middle align-items-center align-self-center">CINEMATA</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#my">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <!-- search box -->
+<div class="mx-auto" style="width: 60%;">
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-search"></i>
+        </span>
+        <input type="text" class="form-control search-box" 
+               [(ngModel)]="searchTerm" 
+               (keyup)="searchFor()" 
+               placeholder="Search for movies...">
+    </div>
+</div>
+        <div class="collapse navbar-collapse me-2 me-sm-5" id="my">
+            <ul class="navbar-nav ms-auto ms-1 me-2 me-sm-5 mx-4">
+                <li class="nav-item dropdown align-items-center ms-4 p-2 p-sm-0">
+                    <a class="nav-link dropdown-toggle align-self-center px-sm-2 px-0 text-sm-center" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-circle-user text-blue fs-4 align-middle align-self-center"></i> 
+                        <span class="align-middle align-self-center text-white"> {{userServiceObj.dataOfLoggedUserBehaviourSubject.getValue().username | titlecase}}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-start menucls" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink="/admin/viewmovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                                <i class="fa-solid fa-film"></i> View Movies
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink="/admin/addmovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                                <i class="fa-solid fa-circle-plus"></i> Add Movie
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink="/admin/deletemovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                                <i class="fa-solid fa-circle-xmark"></i> Delete Movie
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink="login" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show" (click)="userServiceObj.logoutUser()">
+                                <i class="fa-solid fa-right-from-bracket"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

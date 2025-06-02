@@ -1,0 +1,66 @@
+<div class="dracula-profile-container p-4 p-md-5">
+  <!-- Profile Header -->
+  <div class="dracula-profile-card mb-5">
+    <div class="dracula-profile-header p-4">
+      <div class="d-flex align-items-center flex-wrap">
+        <i class="fas fa-user-circle fa-4x text-dracula-purple me-4"></i>
+        <div class="flex-grow-1">
+          <h1 class="dracula-username mb-3">{{ userObj.username }}</h1>
+          <div class="d-flex flex-wrap gap-4">
+            <div class="dracula-user-detail">
+              <i class="fas fa-envelope text-dracula-cyan me-2"></i>
+              <span>{{ userObj.email }}</span>
+            </div>
+            <div class="dracula-user-detail">
+              <i class="fas fa-city text-dracula-cyan me-2"></i>
+              <span>{{ userObj.city }}</span>
+            </div>
+            <div class="dracula-user-detail">
+              <i class="fas fa-user text-dracula-cyan me-2"></i>
+              <span>{{ userObj.age }}</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn dracula-edit-btn ms-auto mt-3 mt-md-0" (click)="openModal(template)">
+          <i class="fas fa-pen me-2"></i> Edit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<ng-template #template>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title text-center">
+                <i class="fas fa-user-edit me-2"></i>Edit Profile
+            </h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modalRef?.hide()"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formVal" (ngSubmit)="confirm()">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username<span class="mandatory-field">*</span></label>
+                    <input id="username" type="text" formControlName="username" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email<span class="mandatory-field">*</span></label>
+                    <input id="email" type="email" formControlName="email" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">City<span class="mandatory-field">*</span></label>
+                    <input id="city" type="text" formControlName="city" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age<span class="mandatory-field">*</span></label>
+                    <input id="age" type="number" formControlName="age" class="form-control" />
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-cancel" (click)="modalRef?.hide()">Cancel</button>
+            <button type="submit" class="btn btn-primary" (click)="confirm()">Save Changes</button>
+        </div>
+    </div>
+</ng-template>

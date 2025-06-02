@@ -1,0 +1,203 @@
+<div
+  class="container mt-5"
+  *ngIf="
+    movie === 'Oops...Please click on the edit button in the movie to edit!'
+  "
+>
+  <div class="row justify-content-center text-center">
+    <div class="col-md-8">
+      <div>
+        <h4 class="mb-2">Oops! No movie selected for editing.</h4>
+        <p class="mb-0">
+          Please go to the <strong class="message">View Movie</strong> page and
+          click the <strong class="message">Edit</strong> button on a movie
+          you would like to modify.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="container mt-5"
+  *ngIf="
+    movie !== 'Oops...Please click on the edit button in the movie to edit!'
+  "
+>
+  <div class="row">
+    <div class="col-12 col-sm-10 col-md-6 mx-auto">
+      <form class="shadow1 px-5 py-5 movie-form" *ngIf="movie">
+        <h3 class="form-title text-center mb-4">Edit Movie</h3>
+        <!-- movie name -->
+        <div class="form-group mt-3">
+          <label for="movieName" class="form-label"
+            ><i class="fas fa-film me-2"></i>Title<span class="mandatory-field"
+              >*</span
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="movie.movieName"
+            name="movieName"
+            readonly
+          />
+        </div>
+        <!-- genre -->
+        <div class="form-group mt-3">
+          <label for="movieGenre" class="form-label"
+            ><i class="fas fa-tags me-2"></i>Genre<span class="mandatory-field"
+              >*</span
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="movie.movieGenre"
+            name="movieGenre"
+          />
+        </div>
+        <!-- rating -->
+        <div class="form-group mt-3">
+          <label for="movieRating" class="form-label"
+            ><i class="fas fa-star me-2"></i>Rating<span class="mandatory-field"
+              >*</span
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="movie.movieRating"
+            name="movieRating"
+          />
+        </div>
+        <!-- language -->
+        <div class="form-group mt-3">
+          <label for="movieLanguage" class="form-label d-block"
+            ><i class="fas fa-language me-2"></i>Movie Language<span
+              class="mandatory-field"
+              >*</span
+            ></label
+          >
+          <select
+            class="form-select"
+            [(ngModel)]="movie.movieLanguage"
+            name="movieLanguage"
+          >
+            <option *ngFor="let lang of languageList" [value]="lang.code">
+              {{ lang.name }}
+            </option>
+          </select>
+        </div>
+
+        <!-- Release Date -->
+        <div class="form-group mt-3">
+          <label for="movieReleaseDate" class="form-label"
+            ><i class="far fa-calendar-alt me-2"></i>Release Date<span
+              class="mandatory-field"
+              >*</span
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="movie.movieReleaseDate"
+            name="movieReleaseDate"
+          />
+        </div>
+        <!-- Poster Image -->
+        <div class="form-group mt-3">
+          <label for="img" class="form-label"
+            ><i class="fas fa-image me-2"></i>Poster Image<span
+              class="mandatory-field"
+              >*</span
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="movie.img"
+            name="img"
+          />
+          <div class="d-block mx-auto text-center mt-3">
+            <img [src]="movie.img" width="120px" alt="" />
+          </div>
+        </div>
+        <!-- description -->
+        <div class="form-group mt-3">
+          <label for="movieDescription" class="form-label"
+            ><i class="fas fa-align-left me-2"></i>Description of Movie<span
+              class="mandatory-field"
+              >*</span
+            ></label
+          >
+          <textarea
+            cols="5"
+            rows="5"
+            class="form-control"
+            [(ngModel)]="movie.movieDescription"
+            name="movieDescription"
+          ></textarea>
+        </div>
+        <!-- Theatre List -->
+        <div class="form-group mt-3">
+          <label for="theatre" class="form-label"
+            ><i class="fas fa-theater-masks me-2"></i>Theatre<span
+              class="mandatory-field"
+              >*</span
+            ></label
+          >
+          <select
+            class="form-select"
+            [(ngModel)]="movie.movieTheatre[0].name"
+            name="theatre"
+          >
+            <option
+              *ngFor="let theatre of theatreList"
+              [ngValue]="theatre.name"
+            >
+              {{ theatre.name }}
+            </option>
+          </select>
+        </div>
+        <!-- button -->
+        <button
+          class="btn btn-primary d-block mt-3 mx-auto"
+          type="button"
+          (click)="editMovie(template)"
+        >
+          Update Movie
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title text-center">Update Movie</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modalRef?.hide()"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <div *ngIf="movieUpdated" class="text-center success-message">
+        <i class="fas fa-check-circle"></i>
+        <h5 class="text-center">Movie Updated successfully</h5>
+      </div>
+      <div *ngIf="updateFailed" class="text-center modal-error-message">
+        <i class="fas fa-exclamation-circle"></i>
+        <h5 class="text-center">Failed to update movie</h5>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="modal-btn text-center" (click)="confirm()">
+        OK
+      </button>
+    </div>
+  </div>
+</ng-template>

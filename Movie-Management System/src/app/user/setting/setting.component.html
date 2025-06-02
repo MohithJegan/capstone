@@ -1,0 +1,155 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12 col-sm-10 col-md-6 mx-auto">
+      <form
+        class="p-4 shadow1"
+        [formGroup]="changepasswordForm"
+        #formRef="ngForm"
+        (ngSubmit)="formRef.valid && onSubmit(template)"
+      >
+        <!-- old password -->
+        <div class="form-group mt-3">
+          <label for="old" class="form-label">Enter the Old Password<span class="mandatory-field">*</span></label>
+          <input
+            type="password"
+            name="old"
+            id="old"
+            class="form-control"
+            formControlName="old"
+          />
+          <div
+            *ngIf="
+              (((old.dirty || old.touched) && old.invalid) ||
+                formRef.submitted) &&
+              old.errors
+            "
+            class="error-message"
+          >
+            <div>
+              <span *ngIf="old.errors?.['required']">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Old password is required
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- new password -->
+        <div class="form-group mt-3">
+          <label for="new" class="form-label">Enter the New Password<span class="mandatory-field">*</span></label>
+          <input
+            type="password"
+            name="new"
+            id="new"
+            class="form-control"
+            formControlName="new"
+          />
+          <div
+            *ngIf="
+              (((new.dirty || new.touched) && new.invalid) ||
+                formRef.submitted) &&
+              new.errors
+            "
+            class="error-message"
+          >
+            <div>
+              <span *ngIf="new.errors?.['required']">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                New password is required
+              </span>
+            </div>
+            <div>
+              <span *ngIf="new.errors?.['minlength']">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Password should be minimum five characters long
+              </span>
+            </div>
+            <div>
+              <span *ngIf="new.errors?.['pattern']">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Password pattern is not matched
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- confirm password -->
+        <div class="form-group mt-3">
+          <label for="confirm" class="form-label">Confirm New Password<span class="mandatory-field">*</span></label>
+          <input
+            type="password"
+            name="confirm"
+            id="confirm"
+            class="form-control"
+            formControlName="confirm"
+          />
+          <div
+            *ngIf="
+              (((confirm.dirty || confirm.touched) && confirm.invalid) ||
+                formRef.submitted) &&
+              confirm.errors
+            "
+            class="error-message"
+          >
+            <div>
+              <span *ngIf="confirm.errors?.['required']">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Confirm password is required
+              </span>
+            </div>
+            <div>
+              <span *ngIf="confirm.errors?.['minlength']">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Password should be minimum five characters long
+              </span>
+            </div>
+            <div>
+              <span *ngIf="confirm.errors?.['pattern']">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Password pattern is not matched
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary d-block mx-auto mt-3">
+          Change Password
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title text-center">Change Password</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modalRef?.hide()"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <div *ngIf="changeError" class="modal-error-message text-center">
+        <i class="fas fa-exclamation-circle"></i>
+        <h5>{{ changeMessage }}</h5>
+      </div>
+      <div *ngIf="changeOkay" class="success-message text-center">
+        <i class="fas fa-check-circle"></i>
+        <h5>{{ changeOkayMsg }}</h5>
+      </div>
+    </div>
+    <div class="modal-footer text-dark" *ngIf="changeError">
+      <button type="button" class="btn btn-primary" (click)="closeModal()">
+        Ok
+      </button>
+    </div>
+    <div class="modal-footer text-dark" *ngIf="changeOkay">
+      <button type="button" class="btn btn-primary" (click)="gotoLogin()">
+        Ok
+      </button>
+    </div>
+  </div>
+</ng-template>

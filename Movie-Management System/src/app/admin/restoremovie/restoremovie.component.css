@@ -1,0 +1,93 @@
+/* Dracula Theme Styles */
+.display {
+    background-color: #282a36;  /* Dracula background */
+    color: #f8f8f2;  /* Dracula foreground */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.restore {
+    background-color: rgba(40, 42, 54, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    border: 1px solid #44475a;  /* Dracula current line */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+    background-color: #343746;  /* Dracula current line */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #6272a4;  /* Dracula comment */
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title h4 {
+    color: #f8f8f2;  /* Dracula foreground */
+    font-weight: 500;
+}
+
+h6 {
+    color: #f8f8f2;  /* Dracula foreground */
+    margin: 8px 0;
+    font-weight: 400;
+}
+
+.card-footer {
+    padding: 15px;
+    background-color: #44475a;  /* Dracula current line */
+    border-top: 1px solid #6272a4;  /* Dracula comment */
+}
+
+.btn {
+    color: #f8f8f2;  /* Dracula foreground */
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #bd93f9;  /* Dracula purple */
+    color: #282a36;  /* Dracula background */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #ff79c6;  /* Dracula pink */
+    transform: scale(1.1);
+}
+
+.fa-solid {
+    color: #282a36;  /* Dracula background */
+}
+
+/* Empty state image styling */
+.restore img {
+    filter: grayscale(50%) brightness(0.8);
+    opacity: 0.7;
+}

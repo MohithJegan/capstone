@@ -1,0 +1,52 @@
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 20px;
+}
+.content{
+    margin-bottom: 1rem;
+}
+.content .main{
+    margin-bottom: 5rem;
+    padding-bottom: 70px;
+}
+
+nav{
+    background: rgba(0,0,0,0.3);
+    width:max-content;
+    display: block;
+    padding: 15px 20px;
+    z-index: 2;
+    position: fixed;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    display: flex;
+    gap:18px;
+    border-radius: 50px;
+    backdrop-filter: blur(15px);
+    animation-name: comeFromBottom;
+    animation-duration: 5s;
+}
+
+nav a{
+    background:transparent;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    color:rgba(255,255,255,0.6);
+    font-size:14px;
+}
+
+nav a:hover{
+    background:rgba(0,0,0,0.3);
+}
+
+nav a.active{
+    background: #1f1f38;
+    color:white;
+}
+

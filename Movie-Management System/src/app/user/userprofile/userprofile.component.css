@@ -1,0 +1,248 @@
+/* Dracula Color Palette */
+:root {
+  --dracula-bg: #282a36;
+  --dracula-current-line: #44475a;
+  --dracula-foreground: #f8f8f2;
+  --dracula-purple: #bd93f9;
+  --dracula-cyan: #8be9fd;
+  --dracula-pink: #ff79c6;
+  --dracula-red: #ff5555;
+  --dracula-green: #50fa7b;
+  --dracula-yellow: #f1fa8c;
+}
+
+/* Make Edit button and icon white */
+.dracula-edit-btn {
+  background-color: var(--dracula-purple);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.dracula-edit-btn i {
+  color: white; /* Icon also white */
+}
+
+.dracula-edit-btn:hover {
+  background-color: var(--dracula-cyan);
+}
+
+/* Add spacing between email, city, and age */
+.dracula-user-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--dracula-text);
+  background-color: var(--dracula-bg);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: Add space between detail boxes */
+.dracula-profile-header .dracula-user-detail:not(:last-child) {
+  margin-right: 1rem;
+}
+
+/* Add shadow and styling to profile container */
+.dracula-profile-card {
+  background-color: var(--dracula-card);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+  transition: transform 0.3s ease;
+}
+
+.dracula-profile-card:hover {
+  transform: translateY(-5px); /* Subtle hover lift */
+}
+
+/* Modal Overlay */
+.dracula-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(40, 42, 54, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+/* Modal Box */
+.dracula-modal {
+  background-color: var(--dracula-current-line);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 500px;
+  color: var(--dracula-foreground);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+/* Close Button */
+.dracula-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--dracula-purple);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Title */
+.dracula-modal-title {
+  color: var(--dracula-purple);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Group */
+.dracula-form-group {
+  margin-bottom: 1rem;
+}
+
+/* Labels */
+.dracula-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dracula-cyan);
+  font-weight: 600;
+}
+
+/* Inputs */
+.dracula-form-input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #44475a;
+  border: 2px solid #bd93f9;
+  border-radius: 0.5rem;
+  color: var(--dracula-foreground);
+  font-size: 1rem;
+}
+
+.dracula-form-input:focus {
+  outline: none;
+  border-color: #bd93f9;
+  box-shadow: 0 0 0 0.2rem rgba(139, 233, 253, 0.25);
+}
+
+/* Buttons */
+.dracula-btn {
+  padding: 0.5rem 1.25rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.dracula-btn-cancel {
+  background-color: #ff5555;
+  color: #fff;
+}
+
+.dracula-btn-save {
+  background-color: #50fa7b;
+  color: #000;
+}
+
+.error-message {
+    color: #FF6B6B;
+    background-color: rgba(255, 107, 107, 0.1);
+    padding: 1rem 1rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    border-left: 3px solid #FF6B6B;
+}
+
+.mandatory-field{
+    color: #ff5555;
+}
+
+.btn-cancel{
+  background-color: #ff5555;
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: #343746;
+    border: unset;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(96, 113, 164, 0.3);
+}
+
+.modal-title {
+    color: #BD90F9;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.success-message, .modal-error-message{
+    text-align: center;
+    /* padding: 1.5rem; */
+}
+
+.success-message{
+    color: #4CAF50;
+}
+
+
+.success-message i {
+    color: #4CAF50;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+.modal-error-message i {
+    color: #FF6B6B;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.modal-error-message h5{
+    color: #FF6B6B;   
+}
+
+.modal-btn {
+    background-color: #BD90F9;
+    color: #343746;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.modal-btn:hover {
+    background-color: #a879e8;
+}
+
+.modal-footer{
+    border-top: 1px solid rgba(96, 113, 164, 0.3);
+}
+
+
+
+@media (max-width: 576px) {
+  .dracula-modal {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .dracula-modal-title {
+    font-size: 1.25rem;
+  }
+}

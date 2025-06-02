@@ -1,0 +1,30 @@
+<h6 class="d-none d-sm-block text-center me-5 mt-3 text-capitalize text-white-50">
+    Welcome <span class="text-purple">{{userData.username}}</span>
+</h6>
+
+<div class="container mt-3 mb-4">
+    <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item mx-2">
+            <a class="nav-link" routerLink="viewmovie" routerLinkActive="active">
+                <i class="fas fa-film me-2"></i>View Movies
+            </a>
+        </li>
+        <li class="nav-item mx-2">
+            <a class="nav-link" routerLink="movieinfo" routerLinkActive="active">
+                <i class="fas fa-info-circle me-2"></i>Movie Details
+            </a>
+        </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" routerLink="setting" routerLinkActive="active">
+                <i class="fas fa-cog me-2 text-blue"></i>Settings
+            </a>
+        </li>
+        <li class="nav-item mx-2">
+            <a class="nav-link" routerLink="userprofile" routerLinkActive="active">
+                <i class="fas fa-user me-2"></i>Profile
+            </a>
+        </li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>

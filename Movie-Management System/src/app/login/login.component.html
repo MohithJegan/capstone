@@ -1,0 +1,59 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-2 btn-shine fs-2 fw-bold">Login</h2>
+    <div class="row mt-3">
+        <div class="col-12 col-sm-10 col-md-6 mx-auto">
+            <form class="shadow px-5 py-5" [formGroup]="userTypeForm" #formRef="ngForm" (ngSubmit)="formRef.valid && onSubmit(template)">
+                <!-- username -->
+                <div class="form-group mt-3">
+                    <label for="user" class="form-label"><i class="fa-solid fa-user"></i> Username<span class="mandatory-field">*</span></label>
+                    <input type="text" name="username" id="user" class="form-control" formControlName="username">
+                    <!-- error message -->
+                    <div *ngIf="(formRef.submitted || username.dirty || username.touched) && username.errors" class="error-message">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        <span *ngIf="username.errors?.['required']">Username is required</span>
+                    </div>
+                </div>
+                <!-- password -->
+                <div class="form-group mt-3">
+                    <label for="password" class="form-label"><i class="fa-solid fa-lock"></i> Password<span class="mandatory-field">*</span></label>
+                    <input type="password" name="password" id="password" class="form-control" formControlName="password">
+                     <!-- error message -->
+                     <div *ngIf="(formRef.submitted || password.touched || password.dirty) && password.errors" class="error-message">
+                            <i class="fas fa-exclamation-circle me-2"></i>
+                            <span *ngIf="password.errors?.['required']">Password is required</span>
+                    </div>
+                </div>
+                <!-- button -->
+                <button class="btn d-block mx-auto mt-3 fw-bold" type="sumbit" id="loginButton">Login</button>
+                <!-- signup for new user -->
+                <p class="new user mt-3 text-center">New to Cinemata? Not registered ? </p>
+                <p class="text-center"> Please <button class="btn btn-primary rounded-pill" (click)="goToSignUp()">Sign Up</button> here
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<ng-template #template>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title text-center">Login</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modalRef?.hide()"></button>
+        </div>
+        <div class="modal-body">
+            <div *ngIf="error && errorMessage=='Invalid Username'" class="modal-error-message text-center">
+                <i class="fas fa-exclamation-circle"></i>
+                <h5>Invalid Username. Please check and retry</h5>
+            </div>
+             <div *ngIf="error==true && errorMessage=='Invalid Password'" class="modal-error-message text-center">
+                <i class="fas fa-exclamation-circle"></i>
+                <h5>Invalid Password. Please check and retry</h5>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="modal-btn text-center" (click)="confirm()">OK</button>
+        </div>
+    </div>
+</ng-template>

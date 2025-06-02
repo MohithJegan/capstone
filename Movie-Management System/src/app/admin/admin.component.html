@@ -1,0 +1,32 @@
+<h6 class="d-none d-sm-block text-center text-white-50 me-5 mt-3">Welcome <span class="text-purple">{{adminData.username}}</span></h6>
+<div class="container mt-5">
+    <ul class="nav nav-pills d-flex justify-content-around">
+        <li class="nav-item">
+            <a href="" class="nav-link" routerLink="viewmovie" routerLinkActive="active">
+                <i class="fas fa-film me-2"></i>View Movie
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link" routerLink="addmovie" routerLinkActive="active">
+                <i class="fas fa-plus-circle me-2"></i>Add Movie
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link" routerLink="editmovie" routerLinkActive="active">
+                <i class="fas fa-edit me-2"></i>Edit Movie
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link" routerLink="deletemovie" routerLinkActive="active">
+                <i class="fas fa-trash-alt me-2"></i>Delete Movie
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link" routerLink="restoremovie" routerLinkActive="active">
+                <i class="fas fa-history me-2"></i>Restore Movie
+            </a>
+        </li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>

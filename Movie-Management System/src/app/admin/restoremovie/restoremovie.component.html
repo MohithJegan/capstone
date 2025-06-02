@@ -1,0 +1,29 @@
+<div class="d-block mx-auto mt-3" *ngIf="toBeRestored?.length==0">
+    <div class="card restore">
+        <img src="https://images-cdn.newscred.com/Zz04NjA3ZjljMjQ0ODkxMWViOWRjYzU1OGJkNjI1ZjVkZA=="
+            class="w-50 mt-2 d-block mx-auto" alt="image not found">
+        <div class="card-img-overlay">
+            <div class="card-title">
+                <h4 class="text-center">Movies yet to be restored!!!</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-3">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-4">
+        <div class="col mb-2" *ngFor="let value of toBeRestored">
+            <div class="card h-100 shadow">
+                <img [src]="value.img" alt="image">
+                <div class="card-body text-center text-white">
+                    <button class="btn"><h6>{{value.movieName}}</h6></button>
+                    <h6>{{value.movieGenre}}</h6>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <button type="button" (click)="restoreMovie(value.movieName)" class="btn btn-primary rounded-circle d-block mx-auto"><i class="fa-solid fa-arrows-rotate"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
