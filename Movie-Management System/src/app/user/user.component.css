@@ -1,15 +1,13 @@
-/* ===== Welcome Text ===== */
 .text-purple {
     color: #BD90F9;
     font-weight: 500;
 }
 
-/* ===== Navigation Container ===== */
 .container {
     max-width: 800px;
 }
 
-/* ===== Navigation Pills ===== */
+/* Navigation */
 .nav-pills {
     background-color: rgba(52, 55, 70, 0.7);
     border-radius: 50px;
@@ -46,7 +44,7 @@
     font-size: 0.9rem;
 }
 
-/* ===== Responsive Design ===== */
+/* Responsive */
 @media (max-width: 768px) {
     .nav-pills {
         padding: 0.25rem;

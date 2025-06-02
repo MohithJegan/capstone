@@ -21,14 +21,13 @@
     color: #ff5555;
 }
 
-/* ===== Modal Shadows ===== */
+/* Modal */
 .modal-content {
     box-shadow:
         0 15px 30px rgba(0, 0, 0, 0.4),
         0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Modal Styles */
 .modal-content {
     background-color: #343746;
     border: unset;
@@ -49,7 +48,6 @@
 
 .success-message, .modal-error-message{
     text-align: center;
-    /* padding: 1.5rem; */
 }
 
 .success-message{

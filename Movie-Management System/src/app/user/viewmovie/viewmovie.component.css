@@ -1,9 +1,7 @@
-/* Base Styles */
 .container, .admin-container {
     padding: 2rem;
 }
 
-/* User View Styles */
 .sort-btn {
     background-color: #BD90F9;
     color: #343746;
@@ -83,7 +81,7 @@
     opacity: 0.9;
 }
 
-/* Admin View Styles */
+/* View */
 .admin-card {
     display: flex;
     flex-direction: column;
@@ -169,10 +167,7 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-
-
-
-/* Pagination Container */
+/* Pagination */
 .pagination {
   display: flex;
   flex-wrap: wrap;
@@ -183,13 +178,11 @@
   margin: 0;
 }
 
-/* Pagination List Items */
 .pagination .page-item {
   transition: transform 0.2s ease;
   flex-shrink: 0;
 }
 
-/* Disabled State */
 .pagination .page-item.disabled .page-link {
   background-color: #282a36;
   color: #6272a4;
@@ -197,7 +190,6 @@
   opacity: 0.6;
 }
 
-/* Active Page */
 .pagination .page-item.active .page-link {
   background-color: #bd93f9;
   color: #282a36;
@@ -205,7 +197,6 @@
   pointer-events: none;
 }
 
-/* Pagination Buttons */
 .page-link {
   background-color: #44475a;
   color: #f8f8f2;
@@ -222,7 +213,6 @@
   text-align: center;
 }
 
-/* Hover State */
 .page-link:hover:not(.disabled):not(.active) {
   background-color: #bd93f9;
   color: #282a36;
@@ -231,7 +221,7 @@
   cursor: pointer;
 }
 
-/* Responsive Typography & Padding */
+/* Responsive */
 @media (max-width: 768px) {
   .page-link {
     font-size: 0.85rem;
@@ -246,9 +236,6 @@
   }
 }
 
-
-
-/* Responsive Design */
 @media (max-width: 1200px) {
     .movie-poster {
         height: 280px;

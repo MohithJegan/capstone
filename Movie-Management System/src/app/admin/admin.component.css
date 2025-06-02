@@ -1,26 +1,25 @@
-/* ===== Welcome Text ===== */
 .text-end {
-    color: #f8f8f2;  /* Dracula foreground */
+    color: #f8f8f2; 
 }
 
 .text-purple {
-    color: #bd93f9;  /* Dracula purple */
+    color: #bd93f9;  
     font-weight: 500;
 }
 
-/* ===== Navigation Container ===== */
+/* Navigation*/
 .container {
     max-width: 1000px;
     padding: 0 20px;
 }
 
-/* ===== Navigation Pills ===== */
+/* Navigation */
 .nav-pills {
-    background-color: #44475a;  /* Dracula current line */
+    background-color: #44475a; 
     border-radius: 50px;
     padding: 0.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid #6272a4;  /* Dracula comment */
+    border: 1px solid #6272a4; 
 }
 
 .nav-link {
@@ -54,16 +53,15 @@
     text-align: center;
 }
 
-/* ===== Icon Colors ===== */
 .nav-link:not(.active) i {
-    color: #bd93f9;  /* Purple icons for inactive state */
+    color: #bd93f9; 
 }
 
 .nav-link.active i {
-    color: #282a36;  /* Dark icons for active state */
+    color: #282a36; 
 }
 
-/* ===== Responsive Design ===== */
+/* Responsive */
 @media (max-width: 992px) {
     .nav-pills {
         flex-wrap: wrap;

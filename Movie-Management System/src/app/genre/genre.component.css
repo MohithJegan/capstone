@@ -1,16 +1,17 @@
 :root {
-  --dracula-bg: #282a36;
-  --dracula-card: #44475a;
-  --dracula-text: #f8f8f2;
-  --dracula-purple: #bd93f9;
-  --dracula-pink: #ff79c6;
-  --dracula-yellow: #f1fa8c;
-  --dracula-cyan: #8be9fd;
+  --bg: #282a36;
+  --card: #44475a;
+  --text: #f8f8f2;
+  --purple: #bd93f9;
+  --pink: #ff79c6;
+  --yellow: #f1fa8c;
+  --cyan: #8be9fd;
 }
+
 /* Genre Cards */
 .genre-card {
-  background-color: var(--dracula-card);
-  color: var(--dracula-text);
+  background-color: var(card);
+  color: var(text);
   padding: 1rem;
   border-radius: 8px;
   font-weight: 600;
@@ -18,29 +19,28 @@
   transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
-  flex-direction: column; /* Changed from row to column */
+  flex-direction: column; 
   align-items: center;
   justify-content: center;
-  gap: 0.5rem; /* Reduced gap between icon and text */
+  gap: 0.5rem; 
   border-left: 3px solid transparent;
   text-align: center;
-  min-height: 100px; /* Added for consistent card height */
+  min-height: 100px;
 }
 
 .genre-icon {
-  font-size: 1.5rem; /* Slightly larger icon */
+  font-size: 1.5rem;
   width: 100%;
   text-align: center;
   transition: all 0.3s ease;
   color: #bd93f9;
 }
 
-/* Rest of your existing CSS remains the same */
 .genre-container {
   display: flex;
   gap: 2rem;
   padding: 2rem;
-  background-color: var(--dracula-bg);
+  background-color: var(bg);
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -52,16 +52,16 @@
 }
 
 .genre-card:hover {
-  background-color: var(--dracula-purple);
-  color: var(--dracula-bg);
+  background-color: var(purple);
+  color: var(bg);
   transform: translateX(5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border-left-color: var(--dracula-pink);
+  border-left-color: var(pink);
 }
 
 .genre-card:hover .genre-icon {
   transform: scale(1.2);
-  color: var(--dracula-bg);
+  color: var(bg);
 }
 
 @media (max-width: 768px) {

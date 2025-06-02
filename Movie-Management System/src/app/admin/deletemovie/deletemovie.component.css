@@ -15,7 +15,7 @@
     color: #ff5555;
 }
 
-/* Modal Styles */
+/* Modal */
 .modal-content {
     background-color: #343746;
     border: unset;
@@ -36,7 +36,6 @@
 
 .success-message, .modal-error-message, .warning-message {
     text-align: center;
-    /* padding: 1.5rem; */
 }
 
 .success-message{

@@ -1,4 +1,4 @@
-/* ===== Signup Container ===== */
+/* Signup Container */
 .signup-container {
     max-width: 600px;
     margin: 2rem auto;
@@ -6,7 +6,7 @@
     animation: fadeIn 0.5s ease-out;
 }
 
-/* ===== Form Styling ===== */
+/* Form Styling */
 .signup-form {
     background-color: #343746;
     border-radius: 12px;
@@ -35,7 +35,7 @@
     border-radius: 14px;
 }
 
-/* ===== Header ===== */
+/* Header */
 .signup-header {
     font-family: 'Fredoka', sans-serif;
     font-weight: 600;
@@ -47,7 +47,7 @@
     letter-spacing: 0.5px;
 }
 
-/* ===== Form Elements ===== */
+/* Form Elements */
 .form-group {
     margin-bottom: 1.5rem;
     position: relative;
@@ -101,7 +101,7 @@
 }
 
 
-/* ===== Button Styling ===== */
+/* Button Styling */
 .btn-info {
     background-color: #BD90F9;
     color: #343746;
@@ -135,7 +135,7 @@
         inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== Modal Shadows ===== */
+/* Modal Shadows */
 .modal-content {
     box-shadow:
         0 15px 30px rgba(0, 0, 0, 0.4),
@@ -163,7 +163,6 @@
 
 .success-message, .modal-error-message{
     text-align: center;
-    /* padding: 1.5rem; */
 }
 
 .success-message{
@@ -210,13 +209,13 @@
     color: #ff5555;
 }
 
-/* ===== Animation ===== */
+/* Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Responsive Adjustments ===== */
+/* Responsive */
 @media (max-width: 768px) {
     .signup-form {
         padding: 1.5rem;
@@ -241,26 +240,21 @@
     }
 }
 
-/* ===== Form Container with Advanced Shadows ===== */
+
 .signup-form {
     background-color: #343746;
     border-radius: 12px;
     padding: 2.5rem;
     position: relative;
     overflow: hidden;
-    
-    /* Multi-layer shadow effect */
     box-shadow: 
         0 1px 1px rgba(189, 144, 249, 0.075),
         0 5px 10px rgba(0, 0, 0, 0.15),
         0 15px 25px rgba(0, 0, 0, 0.2),
         0 20px 40px rgba(0, 0, 0, 0.25);
-    
-    /* Inner glow effect */
     border: 1px solid rgba(189, 144, 249, 0.15);
 }
 
-/* Floating effect with pseudo-element */
 .signup-form::before {
     content: '';
     position: absolute;
@@ -280,7 +274,6 @@
     opacity: 0.7;
 }
 
-/* Form inputs with subtle shadows */
 .form-control {
     background-color: rgba(96, 113, 164, 0.1);
     border: 1px solid #6071A4;
@@ -288,8 +281,6 @@
     padding: 0.75rem 1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
-    
-    /* Input shadow */
     box-shadow:
         inset 0 1px 3px rgba(0, 0, 0, 0.2),
         0 1px 1px rgba(255, 255, 255, 0.05);
@@ -297,14 +288,13 @@
 
 .form-control:focus {
     border-color: #BD90F9;
-    /* Glowing focus effect */
     box-shadow: 
         inset 0 1px 3px rgba(0, 0, 0, 0.2),
         0 0 0 3px rgba(189, 144, 249, 0.3),
         0 2px 6px rgba(189, 144, 249, 0.2);
 }
 
-/* Button with 3D effect */
+
 .btn-info {
     background-color: #BD90F9;
     color: #343746;
@@ -315,8 +305,6 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    
-    /* Button shadow */
     box-shadow:
         0 4px 6px rgba(0, 0, 0, 0.2),
         0 1px 3px rgba(0, 0, 0, 0.1),
@@ -325,7 +313,6 @@
 
 .btn-info:hover {
     transform: translateY(-2px);
-    /* Enhanced shadow on hover */
     box-shadow:
         0 7px 14px rgba(0, 0, 0, 0.25),
         0 3px 6px rgba(0, 0, 0, 0.15),
@@ -334,13 +321,11 @@
 
 .btn-info:active {
     transform: translateY(1px);
-    /* Pressed effect */
     box-shadow:
         0 2px 4px rgba(0, 0, 0, 0.2),
         inset 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Error messages with subtle shadow */
 .alert-danger {
     background-color: rgba(255, 0, 0, 0.1);
     border: 1px solid rgba(255, 0, 0, 0.2);
@@ -349,7 +334,7 @@
         inset 0 1px 2px rgba(255, 255, 255, 0.05);
 }
 
-/* Modal shadow enhancements */
+/* Modal Styles */
 .modal-content {
     box-shadow:
         0 5px 15px rgba(0, 0, 0, 0.3),
@@ -357,14 +342,12 @@
         0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* ===== Modal Shadows ===== */
 .modal-content {
     box-shadow:
         0 15px 30px rgba(0, 0, 0, 0.4),
         0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Modal Styles */
 .modal-content {
     background-color: #343746;
     border: unset;
@@ -385,7 +368,6 @@
 
 .success-message, .modal-error-message {
     text-align: center;
-    /* padding: 1.5rem; */
 }
 
 .success-message{
@@ -427,7 +409,7 @@
 }
 
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
     .signup-form {
         box-shadow: 
