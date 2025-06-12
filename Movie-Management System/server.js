@@ -72,7 +72,7 @@ async function syncMoviesFromAPI() {
         return movieRes.results.map((movie) => ({
           movieName: movie.title,
           movieGenre: genre.name,
-          movieRating: movie.vote_average?.toString(),
+          movieRating: movie.vote_average?.toFixed(1),
           movieLanguage: movie.original_language,
           movieReleaseDate: movie.release_date,
           movieDescription: movie.overview || "No description available.",
@@ -191,18 +191,6 @@ async function getTheatres() {
   return await response.json();
 }
 
-async function getTheatreThroughId(index) {
-  const theatres = await Theatre.find();
-
-  if (index < 0 || index >= theatres.length) {
-    console.error(
-      `Invalid index ${index}. Theatre count is ${theatres.length}`
-    );
-    throw new Error("Index out of bounds");
-  }
-
-  return theatres[index];
-}
 
 //assign port
 const PORT = process.env.PORT;

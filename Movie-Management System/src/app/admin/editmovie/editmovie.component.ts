@@ -9,13 +9,13 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   styleUrls: ['./editmovie.component.css']
 })
 export class EditmovieComponent implements OnInit {
-  movie: any = {}; // To hold current movie details
+  movie: any = {}; 
   modalRef?: BsModalRef;
   movieUpdated: boolean = false;
   updateFailed: boolean = false;
   theatreList: any[] = [];
  
-  languageList: { code: string, name: string }[] = [
+  languageList: { code: string; name: string }[] = [
     { code: 'en', name: 'English' },
     { code: 'ta', name: 'Tamil' },
     { code: 'hi', name: 'Hindi' },
@@ -24,11 +24,19 @@ export class EditmovieComponent implements OnInit {
     { code: 'es', name: 'Spanish' },
     { code: 'de', name: 'German' },
     { code: 'ko', name: 'Korean' },
-    { code: 'ja', name: 'Japanese' }
+    { code: 'ja', name: 'Japanese' },
+    { code: 'zh', name: 'Chinese' },
+    { code: 'ru', name: 'Russian' },
+    { code: 'it', name: 'Italian' },
+    { code: 'pt', name: 'Portuguese' },
+    { code: 'ar', name: 'Arabic' },
+    { code: 'bn', name: 'Bengali' },
+    { code: 'ml', name: 'Malayalam' },
+    { code: 'ur', name: 'Urdu' },
+    { code: 'pa', name: 'Punjabi' },
+    { code: 'gu', name: 'Gujarati' },
+    { code: 'mr', name: 'Marathi' },
   ];
-
-
-  
 
   constructor(
     public userServiceObj: UserService, 

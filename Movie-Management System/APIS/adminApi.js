@@ -163,7 +163,6 @@ adminApp.get("/restoremoviebyname/:movieName",expressAsyncHandler(async(request,
     //get movie name from user
     let movieName = request.params.movieName
     //search for admin in DB
-    // let adminInfo = await Movie.findOne({username:process.env.ADMIN})
     let adminInfo = await Movie.findOne()
     //get all movies
     let movies = adminInfo.movieList

@@ -16,8 +16,6 @@ export class NavbarComponent implements OnInit {
   constructor(public userServiceObj:UserService) { }
 
   ngOnInit(): void {
-    console.log(environment)
-    //this.admin=environment.Admin
   }
 
   searchFor(){

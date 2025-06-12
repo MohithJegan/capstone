@@ -13,16 +13,16 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="" class="nav-link" routerLink="home" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-house text-blue"></i> Home</a>
+                        <a href="/home" class="nav-link" routerLink="home" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-house text-blue"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link" routerLink="genre" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-address-book text-blue"></i> Genre</a>
+                        <a href="/genre" class="nav-link" routerLink="genre" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-address-book text-blue"></i> Genre</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link" routerLink="login" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show" ><i class="fa-solid fa-right-to-bracket text-blue"></i> Login</a>
+                        <a href="/login" class="nav-link" routerLink="login" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show" ><i class="fa-solid fa-right-to-bracket text-blue"></i> Login</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link" routerLink="signup" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-circle-check text-blue"></i> Sign Up</a>
+                        <a href="/signup" class="nav-link" routerLink="signup" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-circle-check text-blue"></i> Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -57,22 +57,22 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-start menucls" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li class="nav-item">
-                            <a href="" class="nav-link text-black" routerLink="/user/viewmovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                            <a href="/user/viewmovi" class="nav-link text-black" routerLink="/user/viewmovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
                                 <i class="fa-solid fa-film"></i> View Movies
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link text-black" routerLink="/user/userprofile" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                            <a href="/user/userprofile" class="nav-link text-black" routerLink="/user/userprofile" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
                                 <i class="fa-solid fa-address-card"></i> Profile
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link text-black" routerLink="/user/setting" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                            <a href="/user/setting" class="nav-link text-black" routerLink="/user/setting" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
                                 <i class="bi bi-gear-fill"></i> Settings
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link text-black" routerLink="login" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show" (click)="userServiceObj.logoutUser()">
+                            <a href="/login" class="nav-link text-black" routerLink="login" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show" (click)="userServiceObj.logoutUser()">
                                 <i class="fa-solid fa-right-from-bracket"></i> Logout
                             </a>
                         </li>
@@ -110,22 +110,22 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-start menucls" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li class="nav-item">
-                            <a href="" class="nav-link text-black" routerLink="/admin/viewmovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                            <a href="/admin/viewmovie" class="nav-link text-black" routerLink="/admin/viewmovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
                                 <i class="fa-solid fa-film"></i> View Movies
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link text-black" routerLink="/admin/addmovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                            <a href="/admin/addmovie" class="nav-link text-black" routerLink="/admin/addmovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
                                 <i class="fa-solid fa-circle-plus"></i> Add Movie
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link text-black" routerLink="/admin/deletemovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
+                            <a href="/admin/deletemovie" class="nav-link text-black" routerLink="/admin/deletemovie" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show">
                                 <i class="fa-solid fa-circle-xmark"></i> Delete Movie
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link text-black" routerLink="login" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show" (click)="userServiceObj.logoutUser()">
+                            <a href="login" class="nav-link text-black" routerLink="login" routerLinkActive="active" data-bs-toggle='collapse' data-bs-target=".navbar-collapse.show" (click)="userServiceObj.logoutUser()">
                                 <i class="fa-solid fa-right-from-bracket"></i> Logout
                             </a>
                         </li>

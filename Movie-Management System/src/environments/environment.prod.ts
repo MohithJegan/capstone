@@ -17,11 +17,5 @@ export const environment = {
   restoreMovie:"http://localhost:5000/admin/restoremovie",
   getRestoreMovieByMovieName:"http://localhost:5000/admin/restoremovieByName",
   updateMovieStatus:"http://localhost:5000/admin/updatestatus",
-  createSeat:"http://localhost:5000/seat/createseat",
-  updateSeat:"http://localhost:5000/seat/updateseat",
-  getSeatUsingSeatNumber:"http://localhost:5000/seat/getseat",
-  getAllSeatsInTheatre:"http://localhost:5000/seat/getallseats",
-  addBookedMovies:"http://localhost:5000/user/bookedmovie",
-  getBookedMovieByUsername:"http://localhost:5000/user/getbookedmovie",
   getPosts:"https://jsonplaceholder.typicode.com/albums"
 };

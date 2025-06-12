@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SettingComponent } from './setting.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import { BsModalRef, BsModalService,ModalModule } from 'ngx-bootstrap/modal';
-import { FormGroup, FormBuilder, Validators,ReactiveFormsModule,FormsModule} from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 
 describe('SettingsComponent', () => {
   let component: SettingComponent;

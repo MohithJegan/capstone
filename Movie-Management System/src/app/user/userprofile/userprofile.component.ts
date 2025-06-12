@@ -11,7 +11,6 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class UserprofileComponent implements OnInit {
   userObj: any;
   formVal: FormGroup;
-  bookingList: any;
   id: any;
   status: boolean;
   version: any;
@@ -31,14 +30,6 @@ export class UserprofileComponent implements OnInit {
     this.version = this.userObj._v;
     this.password = this.userObj.password;
 
-    this.userservice.getBookedMovieByUserName(this.id).subscribe({
-      next: (res) => {
-        if (res.message === 'User Found') {
-          this.bookingList = res.payload.bookingsList;
-        }
-      },
-      error: (err) => console.log(err)
-    });
 
     this.formVal = this.formbuildObj.group({
       username: [this.userObj.username],
@@ -65,7 +56,7 @@ export class UserprofileComponent implements OnInit {
     };
     this.userservice.editUser(user).subscribe({
     next: (res) => {
-      // Update the local userObj so changes reflect instantly
+      // Update the local userObj
       this.userObj = { ...this.userObj, ...user };
 
       const updatedUser = {

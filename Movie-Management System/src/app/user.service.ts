@@ -130,47 +130,4 @@ export class UserService {
     return this.httpClientObj.put(environment.updateMovieStatus,movieObj)
   }
 
-  //create seat
-  createSeat(seatObj):Observable<any>{
-    return this.httpClientObj.post(environment.createSeat,seatObj)
-  }
-  //update seat
-  updateSeat(seatObj):Observable<any>{
-    return this.httpClientObj.put(environment.updateSeat,seatObj)
-  }
-  //get seat using seat number
-  getSeatUsingSeatNumber(seatNumber):Observable<any>{
-    return this.httpClientObj.get(environment.getSeatUsingSeatNumber+`/${seatNumber}`)
-  }
-
-  //get all seats
-  getAllSeatsInTheatre():Observable<any>{
-    return this.httpClientObj.get(environment.getAllSeatsInTheatre)
-  }
-
-  // add booked seat to booking collection
-  addBookedMovies(bookedmovieObj):Observable<any>{
-    return this.httpClientObj.post<any>(environment.addBookedMovies,bookedmovieObj)
-  }
-
-  //get bookedmovie info using user name
-  getBookedMovieByUserName(id):Observable<any>{
-    return this.httpClientObj.get<any>(environment.getBookedMovieByUsername+`/${id}`)
-  }
-
-  //Testing Section
-
-  // for testing
-  getData(){
-    return 100
-  }
-
-  getSum(a,b){
-    return a+b
-  }
-
-  getPosts():Observable<any>{
-    return this.httpClientObj.get(environment.getPosts)
-  }
-
 }

@@ -9,14 +9,12 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./movieinfo.component.css'],
 })
 export class MovieinfoComponent implements OnInit {
-  // @ViewChild('carousel') carousel!: ElementRef;
-  // currentIndex = 0;
 
   @ViewChild('carousel', { static: false }) carousel: ElementRef;
 
   scrollCarousel(direction: 'prev' | 'next') {
     const carouselEl = this.carousel.nativeElement as HTMLElement;
-    const scrollAmount = 220; // adjust depending on item width + margin
+    const scrollAmount = 220; 
 
     if (direction === 'next') {
       carouselEl.scrollBy({ left: scrollAmount, behavior: 'smooth' });
@@ -103,7 +101,7 @@ export class MovieinfoComponent implements OnInit {
     this.ticketPrice = (Math.random() * 10 + 9.99).toFixed(2);
 
     // Generate random number of shows (3 to 5)
-    const showCount = Math.floor(Math.random() * 3) + 3; // 3 to 5 shows
+    const showCount = Math.floor(Math.random() * 3) + 3; 
 
     // Generate random show timings
     this.showTimings = this.generateRandomShowTimings(showCount);
@@ -120,17 +118,6 @@ export class MovieinfoComponent implements OnInit {
           }
         },
       });
-    // this.userServiceObj.getSuggestedMoviesByGenreName(this.movieDetails.movieGenre).subscribe({
-    //   next: (response) => {
-    //     if (response.message === "Suggested Movies") {
-    //       // Store the full array
-    //       const allMovies = response.payload[0];
-
-    //       // Chunk the array into groups of 5
-    //       this.suggestedMovies = this.chunkMovies(allMovies, 5);
-    //     }
-    //   }
-    // });
   }
 
   getLanguageNameByCode(code: string): string {
@@ -155,7 +142,7 @@ export class MovieinfoComponent implements OnInit {
     });
   }
 
-  // Utility function to generate random timings
+  //function to generate random timings
   generateRandomShowTimings(count: number): string[] {
     const timings = [];
     const hours = [10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -167,7 +154,6 @@ export class MovieinfoComponent implements OnInit {
       const period = meridiem[Math.floor(Math.random() * meridiem.length)];
       const time = `${hour}:${minute} ${period}`;
       if (!timings.includes(time)) {
-        // avoid duplicates
         timings.push(time);
       }
     }

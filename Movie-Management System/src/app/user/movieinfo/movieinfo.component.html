@@ -62,22 +62,6 @@
               }}</span>
             </div>
             <p class="lead mb-4">{{ movieDetails.movieDescription }}</p>
-            <div class="d-flex gap-3">
-              <a
-                class="btn btn-imdb"
-                [href]="'https://www.imdb.com/title/' + movieDetails.imdb_id"
-                target="_blank"
-              >
-                <i class="bi bi-film me-2"></i> IMDb
-              </a>
-              <a
-                class="btn btn-tmdb"
-                [href]="'https://www.themoviedb.org/movie/' + movieDetails.id"
-                target="_blank"
-              >
-                <i class="bi bi-camera-reels me-2"></i> TMDb
-              </a>
-            </div>
           </div>
         </div>
       </div>

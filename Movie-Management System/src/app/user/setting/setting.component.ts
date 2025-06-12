@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms'
+import { FormGroup, FormBuilder, Validators} from '@angular/forms'
 import { UserService } from 'src/app/user.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import {Router} from '@angular/router'

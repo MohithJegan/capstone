@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // Initialize carousels after view is rendered
+    // Initialize carousels
     this.initCarousels();
   }
 
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   chunkMoviesForCarousels(): void {
     this.availableGenres.forEach(genre => {
       const movies = this.moviesByGenre[genre];
-      const chunkSize = 6; // Number of movies per slide
+      const chunkSize = 6;
       this.chunkedMoviesByGenre[genre] = [];
       
       for (let i = 0; i < movies.length; i += chunkSize) {

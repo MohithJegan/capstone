@@ -2,10 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddmovieComponent } from './addmovie.component';
 
-import { FormGroup, FormBuilder, Validators,ReactiveFormsModule,FormsModule} from '@angular/forms';
+import { FormGroup, ReactiveFormsModule,FormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import { BsModalRef, BsModalService,ModalModule } from 'ngx-bootstrap/modal';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 describe('AddmovieComponent', () => {
   let component: AddmovieComponent;

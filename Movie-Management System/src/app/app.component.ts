@@ -16,14 +16,4 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-  // callFromHome(){
-  //   this.inHomePage=false
-  //   this.userServiceObj.navbarBehaviourSubject.next(this.inHomePage)
-  // }
-
-  // callFromOther(){
-  //   this.inHomePage=true
-  //   this.userServiceObj.navbarBehaviourSubject.next(this.inHomePage)
-  // }
 }
