@@ -2,17 +2,21 @@
     <div class="row">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
             <form [formGroup]="addmovieForm" #formRef="ngForm" (ngSubmit)="formRef.form.valid && onSubmit(template)" 
-                  class="movie-form">
-                <h3 class="form-title text-center mb-4">Add New Movie</h3>
+                   class="movie-form" aria-label="Add Movie Form">
+                <h3 class="form-title text-center mb-4" aria-label="Add New Movie Heading">Add New Movie</h3>
                 
                 <!-- Movie Title -->
                 <div class="form-group">
                     <label for="movieTitle" class="form-label">
                         <i class="fas fa-film me-2"></i>Title<span class="mandatory-field">*</span>
                     </label>
-                    <input type="text" id="movieTitle" class="form-control" formControlName="movieName">
+                    <input id="movieTitle" 
+                           aria-label="Movie Title" 
+                           aria-required="true" 
+                           type="text" 
+                           class="form-control" formControlName="movieName">
                     <div *ngIf="(formRef.submitted || (movieName.dirty || movieName.touched)) && movieName.errors" 
-                         class="error-message">
+                         class="error-message" aria-live="assertive">
                         <i class="fas fa-exclamation-circle me-2"></i>
                         <span *ngIf="movieName.errors?.['required']">Title is required</span>
                     </div>
@@ -23,9 +27,13 @@
                     <label for="movieGenre" class="form-label">
                         <i class="fas fa-tags me-2"></i>Genre<span class="mandatory-field">*</span>
                     </label>
-                    <input type="text" id="movieGenre" class="form-control" formControlName="movieGenre">
+                    <input id="movieGenre" 
+                           aria-label="Movie Genre" 
+                           aria-required="true" 
+                           type="text" 
+                           class="form-control" formControlName="movieGenre">
                     <div *ngIf="(formRef.submitted || (movieGenre.dirty || movieGenre.touched)) && movieGenre.errors" 
-                         class="error-message">
+                         class="error-message" aria-live="assertive">
                         <i class="fas fa-exclamation-circle me-2"></i>
                         <span *ngIf="movieGenre.errors?.['required']">Genre is required</span>
                     </div>
@@ -36,9 +44,13 @@
                     <label for="movieRating" class="form-label">
                         <i class="fas fa-star me-2"></i>Rating<span class="mandatory-field">*</span>
                     </label>
-                    <input type="text" id="movieRating" class="form-control" formControlName="movieRating">
+                    <input id="movieRating" 
+                           aria-label="Movie Rating" 
+                           aria-required="true" 
+                           type="text" 
+                           class="form-control" formControlName="movieRating">
                     <div *ngIf="(formRef.submitted || (movieRating.dirty || movieRating.touched)) && movieRating.errors" 
-                         class="error-message">
+                         class="error-message" aria-live="assertive">
                         <i class="fas fa-exclamation-circle me-2"></i>
                         <span *ngIf="movieRating.errors?.['required']">Rating is required</span>
                     </div>
@@ -49,9 +61,13 @@
                     <label for="movieReleaseDate" class="form-label">
                         <i class="far fa-calendar-alt me-2"></i>Release Date<span class="mandatory-field">*</span>
                     </label>
-                    <input type="date" id="movieReleaseDate" class="form-control" formControlName="movieReleaseDate">
+                    <input id="movieReleaseDate" 
+                           aria-label="Release Date" 
+                           aria-required="true" 
+                           type="date" 
+                           class="form-control" formControlName="movieReleaseDate">
                     <div *ngIf="(formRef.submitted || (movieReleaseDate.dirty || movieReleaseDate.touched)) && movieReleaseDate.errors" 
-                         class="error-message">
+                         class="error-message" aria-live="assertive">
                         <i class="fas fa-exclamation-circle me-2"></i>
                         <span *ngIf="movieReleaseDate.errors?.['required']">Release Date is required</span>
                     </div>
@@ -62,14 +78,17 @@
                     <label for="movieLanguage" class="form-label">
                         <i class="fas fa-language me-2"></i>Language<span class="mandatory-field">*</span>
                     </label>
-                    <select id="movieLanguage" class="form-select" formControlName="movieLanguage">
+                    <select id="movieLanguage" 
+                            aria-label="Movie Language" 
+                            aria-required="true" 
+                            class="form-select" formControlName="movieLanguage">
                         <option value="" disabled selected>Select Language</option>
                         <option *ngFor="let language of languages" [value]="language">
                             {{ language }}
                         </option>
                     </select>
                     <div *ngIf="(formRef.submitted || (movieLanguage.dirty || movieLanguage.touched)) && movieLanguage.errors" 
-                         class="error-message">
+                         class="error-message" aria-live="assertive">
                         <i class="fas fa-exclamation-circle me-2"></i>
                         <span *ngIf="movieLanguage.errors?.['required']">Language is required</span>
                     </div>
@@ -80,8 +99,11 @@
                     <label for="movieImage" class="form-label">
                         <i class="fas fa-image me-2"></i>Poster Image URL<span class="mandatory-field">*</span>
                     </label>
-                    <input type="text" id="movieImage" class="form-control" formControlName="img">
-                   
+                    <input id="movieImage" 
+                           aria-label="Poster Image URL" 
+                           aria-required="true" 
+                           type="text" 
+                           class="form-control" formControlName="img">
                 </div>
 
                 <!-- Description -->
@@ -89,10 +111,13 @@
                     <label for="movieDescription" class="form-label">
                         <i class="fas fa-align-left me-2"></i>Description<span class="mandatory-field">*</span>
                     </label>
-                    <textarea id="movieDescription" cols="5" rows="5" class="form-control" 
-                              formControlName="movieDescription"></textarea>
+                    <textarea id="movieDescription" 
+                             aria-label="Movie Description" 
+                             aria-required="true" 
+                             cols="5" rows="5" 
+                             class="form-control" formControlName="movieDescription"></textarea>
                     <div *ngIf="(formRef.submitted || (movieDescription.dirty || movieDescription.touched)) && movieDescription.errors" 
-                         class="error-message">
+                         class="error-message" aria-live="assertive">
                         <i class="fas fa-exclamation-circle me-2"></i>
                         <span *ngIf="movieDescription.errors?.['required']">Description is required</span>
                     </div>
@@ -103,20 +128,23 @@
                     <label for="movieTheatre" class="form-label">
                         <i class="fas fa-theater-masks me-2"></i>Theatre<span class="mandatory-field">*</span>
                     </label>
-                    <select id="movieTheatre" class="form-select" formControlName="movieTheatre">
-                        <option value="" disabled selected>Select Theatre</option>
+                    <select id="movieTheatre" 
+                            aria-label="Movie Theatre" 
+                            aria-required="true" 
+                            class="form-select" formControlName="movieTheatre">
+                        <option value="">Select Theatre</option>
                         <option *ngFor="let theatre of theatreList" [value]="theatre.id">{{ theatre.name }}</option>
                     </select>
                     <div *ngIf="addmovieForm.get('movieTheatre')?.touched && addmovieForm.get('movieTheatre')?.errors" 
-                         class="error-message">
+                         class="error-message" aria-live="assertive">
                         <i class="fas fa-exclamation-circle me-2"></i>
                         <span>Please select a Theatre</span>
                     </div>
                 </div>
 
                 <!-- Submit Button -->
-                <div class="form-group text-center mt-4" >
-                    <button class="submit-btn" type="submit">
+                <div class="form-group text-center mt-4">
+                    <button aria-label="Add Movie" class="submit-btn" type="submit">
                         <i class="fas fa-plus-circle me-2"></i>Add Movie
                     </button>
                 </div>
@@ -128,21 +156,21 @@
 <ng-template #template>
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title">Add Movie</h4>
+            <h4 class="modal-title" aria-label="Add Movie">Add Movie</h4>
             <button type="button" class="btn-close" aria-label="Close" (click)="modalRef?.hide()"></button>
         </div>
         <div class="modal-body">
-            <div *ngIf="movieadded" class="success-message">
+            <div *ngIf="movieadded" class="success-message" aria-live="assertive">
                 <i class="fas fa-check-circle"></i>
                 <h5>Movie Added Successfully</h5>
             </div>
-            <div *ngIf="movieRegistered" class="modal-error-message">
+            <div *ngIf="movieRegistered" class="modal-error-message" aria-live="assertive">
                 <i class="fas fa-exclamation-circle"></i>
                 <h5>Movie Already Registered</h5>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="modal-btn" (click)="confirm()">OK</button>
+            <button aria-label="Confirm" type="button" class="modal-btn" (click)="confirm()">OK</button>
         </div>
     </div>
 </ng-template>
