@@ -1,39 +1,71 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 col-sm-10 col-md-6 mx-auto">
-                <!-- movie name -->
-                <div class="form-group mt-3 p-4 shadow1">
-                    <label for="" class="form-label">Enter the Movie to Remove<span class="mandatory-field">*</span></label>
-                    <input type="text" name="" id="" [value]="this.userServiceObj.deleteMovieBehaviourSubject.getValue()" #movie class="form-control">
-                </div>
-                <!-- button -->
-                <button class="btn btn-danger d-block mx-auto mt-3" (click)="confirmdelete(template)">Delete</button>
+            <!-- Movie name -->
+            <div class="form-group mt-3 p-4 shadow1">
+                <label for="movieToRemove" class="form-label">
+                    <i class="fas fa-film me-2"></i>Enter the Movie to Remove<span class="mandatory-field">*</span>
+                </label>
+                <input 
+                    id="movieToRemove" 
+                    name="movieToRemove" 
+                    [value]="this.userServiceObj.deleteMovieBehaviourSubject.getValue()" 
+                    #movie 
+                    class="form-control">
+            </div>
+
+            <!-- Button -->
+            <div class="form-group text-center mt-4">
+                <button 
+                    class="btn btn-danger submit-btn" 
+                    (click)="confirmdelete(template)"> 
+                    <i class="fas fa-trash-alt me-2"></i>Delete Movie
+                </button>
+            </div>
         </div>
     </div>
 </div>
 
-
-
 <ng-template #template>
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title text-center">Movie Delete</h4>
+            <h4 class="modal-title text-center">
+                <i class="fas fa-trash-alt me-2"></i>Movie Delete
+            </h4>
             <button type="button" class="btn-close" aria-label="Close" (click)="modalRef?.hide()"></button>
         </div>
         <div class="modal-body">
-            <div *ngIf="ask" class="text-center" class="warning-message">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-                <h5>Are you sure to delete the movie</h5>
+            <div *ngIf="ask" class="text-center warning-message">
+                <i class="fa-solid fa-triangle-exclamation me-2"></i>
+                <h5>Are you sure you want to delete this movie?</h5>
             </div>
-            <div *ngIf="successsignup" class="text-center" class="success-message">
-                <i class="fas fa-check-circle"></i>
-                <h5>Movie Deleted</h5>
+            <div *ngIf="successsignup" class="text-center success-message">
+                <i class="fas fa-check-circle me-2"></i>
+                <h5>Movie successfully removed</h5>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary" (click)="confirm()" *ngIf="hide">Yes</button>
-            <button type="button" class="btn btn-primary" (click)="decline()" *ngIf="hide">No</button>
-            <button type="button" class="btn btn-primary" (click)="deleteconfirm(movie.value)" *ngIf="!hide">Ok</button>
+            <button 
+                type="button" 
+                class="btn btn-primary" 
+                (click)="confirm()" 
+                *ngIf="hide">
+                Yes
+            </button>
+            <button 
+                type="button" 
+                class="btn btn-primary" 
+                (click)="decline()" 
+                *ngIf="hide">
+                No
+            </button>
+            <button 
+                type="button" 
+                class="btn btn-primary" 
+                (click)="deleteconfirm(movie.value)" 
+                *ngIf="!hide">
+                Ok
+            </button>
         </div>
     </div>
 </ng-template>
