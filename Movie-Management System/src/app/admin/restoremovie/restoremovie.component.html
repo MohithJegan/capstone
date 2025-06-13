@@ -1,15 +1,18 @@
 <div class="d-block mx-auto mt-3" *ngIf="toBeRestored?.length==0">
     <div class="card restore">
-        <img src="https://images-cdn.newscred.com/Zz04NjA3ZjljMjQ0ODkxMWViOWRjYzU1OGJkNjI1ZjVkZA=="
-            class="w-50 mt-2 d-block mx-auto" alt="image not found">
+        <svg width="200" height="200" viewBox="0 0 24 24" fill="none" class="w-50 mt-2 d-block mx-auto">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm1-6h-2V7h2v7z"
+                  fill="#bd93f9"/>
+            <path d="M18 11h-2V9h2v2zm0-4h-2V5h2v2zm-8 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2z"
+                  fill="#bd93f9"/>
+        </svg>
         <div class="card-img-overlay">
             <div class="card-title">
-                <h4 class="text-center">Movies yet to be restored!!!</h4>
+                <h4 class="text-center">No movies to restore!</h4>
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="container mt-3">
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-4">
