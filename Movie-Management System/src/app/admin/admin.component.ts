@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
       }
     })
 
-    this.userServiceObj.movieInfoBehaviourSubject.next("Oops...Please click on the edit button in the movie to edit!")
+    this.userServiceObj.movieInfoBehaviourSubject.next("Oops...Please click on the movie to view its information!");
 
   }
 

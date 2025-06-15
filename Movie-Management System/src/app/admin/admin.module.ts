@@ -11,6 +11,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { RestoremovieComponent } from './restoremovie/restoremovie.component';
 import { EditmovieComponent } from './editmovie/editmovie.component';
 import { FormsModule } from '@angular/forms';
+import { MovieinfoComponent } from './movieinfo/movieinfo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     AddmovieComponent,
     DeletemovieComponent,
     RestoremovieComponent,
-    EditmovieComponent
+    EditmovieComponent,
+    MovieinfoComponent
   ],
   imports: [
     CommonModule,

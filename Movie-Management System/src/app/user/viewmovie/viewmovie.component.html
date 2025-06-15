@@ -65,11 +65,20 @@
             </div>
           </div>
           
-          <div class="movie-details">
-            <div class="detail-item"><i class="fas fa-film"></i><span>{{movie.movieName}}</span></div>
+          <div class="movie-details d-block text-center">
+            <div class="detail-item text-center"><i class="fas fa-film"></i><span>{{movie.movieName}}</span></div>
             <div class="detail-item"><i class="fas fa-tag"></i><span>{{movie.movieGenre}}</span></div>
             <div class="detail-item"><i class="fas fa-language"></i><span>{{getLanguageNameByCode(movie.movieLanguage)}}</span></div>
             <div class="detail-item"><i class="fas fa-calendar-alt"></i><span>{{movie.movieReleaseDate}}</span></div>
+             <div class="text-center">
+              <button 
+                (click)="goToMovieInfo(movie.movieName)" 
+                class="btn btn-outline-light px-3 py-1" 
+                style="border: 1px solid #bd93f9; color: #bd93f9">
+                View Details
+              </button>
+            </div>
+
           </div>
           
           <div class="movie-actions">

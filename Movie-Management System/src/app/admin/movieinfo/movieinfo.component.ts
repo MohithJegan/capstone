@@ -6,11 +6,10 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-movieinfo',
   templateUrl: './movieinfo.component.html',
-  styleUrls: ['./movieinfo.component.css'],
+  styleUrls: ['./movieinfo.component.css']
 })
 export class MovieinfoComponent implements OnInit {
-
-  @ViewChild('carousel', { static: false }) carousel: ElementRef;
+ @ViewChild('carousel', { static: false }) carousel: ElementRef;
 
   scrollCarousel(direction: 'prev' | 'next') {
     const carouselEl = this.carousel.nativeElement as HTMLElement;
@@ -165,4 +164,5 @@ export class MovieinfoComponent implements OnInit {
     const url = `https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
+
 }

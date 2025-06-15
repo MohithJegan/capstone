@@ -115,6 +115,17 @@ export class ViewmovieComponent implements OnInit {
     });
   }
 
+  goToMovieInfo(movieName: string) {
+    this.userServiceObj.getMovieByMovieName(movieName).subscribe({
+      next: (response) => {
+        if (response.message === 'Movie Found') {
+          this.userServiceObj.movieInfoBehaviourSubject.next(response.payload);
+          this.routerObj.navigateByUrl('/admin/movieinfo');
+        }
+      },
+    });
+  }
+
   goToEditPage(movie) {
     this.userServiceObj.movieInfoBehaviourSubject.next(movie);
     this.routerObj.navigateByUrl('/admin/editmovie');

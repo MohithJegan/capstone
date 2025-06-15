@@ -1,0 +1,208 @@
+/* Hero Section */
+.movie-hero {
+  height: 70vh;
+  min-height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.backdrop-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4);
+  z-index: 1;
+}
+
+.movie-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(to top, #343746 10%, transparent 90%);
+}
+
+.movie-poster {
+  border-radius: 8px;
+  transform: translateY(50px);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.movie-poster:hover {
+  transform: translateY(50px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Badges */
+.badge.bg-purple {
+  background-color: #BD90F9;
+  color: #343746;
+}
+
+/* Buttons */
+.btn-imdb {
+  background-color: #f5c518;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-tmdb {
+  background-color: #01b4e4;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-purple {
+  background-color: #BD90F9;
+  color: #343746;
+  font-weight: bold;
+}
+
+.btn-purple:hover {
+  background-color: #a97af0;
+}
+
+/* Theatre Card */
+.theatre-card, .comments-card {
+  background-color: #343746;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theatre-details {
+  list-style: none;
+  padding-left: 0;
+}
+
+.theatre-details li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Comments */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+}
+
+.comment-item {
+  background-color: rgba(189, 144, 249, 0.05);
+  transition: all 0.3s ease;
+}
+
+.comment-item:hover {
+  background-color: rgba(189, 144, 249, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Carousel */
+.recommendations-section {
+  position: relative;
+  padding: 20px 0 40px;
+}
+
+.section-title {
+  color: #BD90F9;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #BD90F9;
+}
+
+.recommendations-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px 0;
+  scrollbar-width: none;
+}
+
+.recommendations-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.recommendation-item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 200px;
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(52, 55, 70, 0.9), rgba(52, 55, 70, 0));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.card-image:hover .card-overlay {
+  opacity: 1;
+}
+
+.btn-play {
+  background-color: #BD90F9;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  border: none;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.message{
+    color: #BD90F9;
+}

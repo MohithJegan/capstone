@@ -1,0 +1,199 @@
+<div
+  class="container mt-5"
+  *ngIf="
+    movieDetails === 'Oops...Please click on the movie to view its information!'
+  "
+>
+  <div class="row justify-content-center text-center">
+    <div class="col-md-8">
+      <div>
+        <h4 class="mb-2">Oops! No movie selected.</h4>
+        <p class="mb-0">
+          Please visit the <strong class="message">View Movie</strong> page and
+          click on a <strong class="message">View movie button</strong> to view its details.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="container mt-4"
+  *ngIf="
+    movieDetails !== 'Oops...Please click on the movie to view its information!'
+  "
+>
+  <!-- Hero Section -->
+  <div class="movie-hero position-relative mb-5">
+    <div
+      class="backdrop-image"
+      [style.backgroundImage]="
+        'url(' +
+        (movieDetails.img ||
+          'https://images.pexels.com/photos/534590/pexels-photo-534590.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') +
+        ')'
+      "
+    ></div>
+    <div class="movie-overlay">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-md-4">
+            <img
+              [src]="
+                movieDetails.img ||
+                'https://images.pexels.com/photos/534590/pexels-photo-534590.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+              "
+              class="movie-poster img-fluid shadow-lg"
+              alt="{{ movieDetails.movieName }} poster"
+            />
+          </div>
+          <div class="col-md-8 text-white py-4">
+            <h1 class="display-4 fw-bold mb-3">{{ movieDetails.movieName }}</h1>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge bg-purple"
+                >{{ movieDetails.movieRating }} ★</span
+              >
+              <span class="badge bg-dark">{{
+                getLanguageNameByCode(movieDetails.movieLanguage)
+              }}</span>
+              <span class="badge bg-dark">{{ movieDetails.movieGenre }}</span>
+              <span class="badge bg-dark">{{
+                movieDetails.movieReleaseDate | date
+              }}</span>
+            </div>
+            <p class="lead mb-4">{{ movieDetails.movieDescription }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theatre Info -->
+  <div class="card theatre-card mb-5">
+    <div class="card-body">
+      <h3 class="card-title text-purple mb-4">
+        <i class="fas fa-map-marker-alt me-2"></i>Theatre Information
+      </h3>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="theatre-details">
+            <li>
+              <i class="fas fa-theater-masks text-purple me-2"></i>
+              <strong>Theatre:</strong> {{ movieDetails.movieTheatre[0]?.name }}
+            </li>
+            <li>
+              <i class="fas fa-map-marked-alt text-purple me-2"></i>
+              <strong>Address:</strong>
+              {{ movieDetails.movieTheatre[0]?.address }}
+            </li>
+            <li>
+              <i class="fas fa-city text-purple me-2"></i>
+              <strong>City:</strong> {{ movieDetails.movieTheatre[0]?.city }}
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="theatre-details">
+            <li>
+              <i class="fas fa-ticket-alt text-purple me-2"></i>
+              <strong>Ticket Price:</strong> ${{ ticketPrice }}
+            </li>
+            <li>
+              <i class="fas fa-clock text-purple me-2"></i>
+              <strong>Showtimes:</strong> {{ showTimings.join(", ") }}
+            </li>
+            <li>
+              <i class="fas fa-mail-bulk text-purple me-2"></i>
+              <strong>Postal Code:</strong>
+              {{ movieDetails.movieTheatre[0]?.post_code }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        *ngIf="
+          movieDetails.movieTheatre[0]?.latitude &&
+          movieDetails.movieTheatre[0]?.longitude
+        "
+        class="mt-4"
+      >
+        <div class="map-container rounded overflow-hidden shadow">
+          <iframe
+            [src]="safeMapUrl"
+            width="100%"
+            height="350"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comments -->
+  <div class="card comments-card mb-5">
+    <div class="card-body">
+      <h3 class="card-title text-purple mb-4">
+        <i class="fas fa-comments me-2"></i>User Reviews
+      </h3>
+      <div *ngIf="comments && comments.length > 0; else noComments">
+        <div *ngFor="let cmt of comments" class="comment-item mb-4 p-3 rounded">
+          <div class="d-flex align-items-center mb-2">
+            <div
+              class="user-avatar bg-purple text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+            >
+              {{ cmt.commentedBy.charAt(0).toUpperCase() }}
+            </div>
+            <div>
+              <h5 class="mb-0">{{ cmt.commentedBy }}</h5>
+              <small class="text-muted">{{ generateDay() }} days ago</small>
+            </div>
+          </div>
+          <p class="comment-text mt-2 mb-0">{{ cmt.comment }}</p>
+        </div>
+      </div>
+      <ng-template #noComments>
+        <div class="no-comments text-center py-5">
+          <i class="fas fa-comment-slash text-muted fs-1 mb-3"></i>
+          <h5 class="text-muted">No reviews yet</h5>
+          <p class="text-muted">Be the first to share your thoughts!</p>
+          <button class="btn btn-purple">Write a Review</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- Recommendations Section -->
+  <div class="recommendations-section">
+    <h3 class="section-title mb-4">You Might Also Like</h3>
+
+    <!-- Carousel Container -->
+    <div class="position-relative">
+      <!-- Prev Button -->
+      <button class="carousel-control-prev" (click)="scrollCarousel('prev')">
+        <i class="bi bi-chevron-left text-white fs-4"></i>
+      </button>
+
+      <!-- Carousel Content -->
+      <div class="recommendations-carousel" #carousel>
+        <div class="recommendation-item" *ngFor="let rec of suggestedMovies">
+          <!-- Your content for recommended movie -->
+          <div class="card-image">
+            <img [src]="rec.img" alt="{{ rec.movieName }}" />
+            <div class="card-overlay">
+              <div class="text-white fw-bold text-center">
+                {{ rec.movieName }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button class="carousel-control-next" (click)="scrollCarousel('next')">
+        <i class="bi bi-chevron-right text-white fs-4"></i>
+      </button>
+    </div>
+  </div>
+</div>
