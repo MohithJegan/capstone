@@ -1,24 +1,3 @@
-// export const environment = {
-//   production: true,
-//   Admin:"Raju",
-//   createUser:"http://localhost:5000/user/createuser",
-//   loginUser:"http://localhost:5000/user/login",
-//   loginAdmin:"http://localhost:5000/admin/login",
-//   editUser:"http://localhost:5000/user/edituser",
-//   changePassword:"http://localhost:5000/user/changepassword",
-//   getMovies:"http://localhost:5000/admin/getmovies",
-//   getTheatres:"http://localhost:5000/admin/gettheatres",
-//   addMovie:"http://localhost:5000/admin/addmovie",
-//   getMovieByMovieName:"http://localhost:5000/admin/getmovie",
-//   getTheatreByTheatreId: "http://localhost:5000/admin/gettheatre",
-//   getSuggestedMoviesByGenreName:"http://localhost:5000/admin/getsuggestedmovie",
-//   updateMovie: "http://localhost:5000/admin/editmovie",
-//   deleteMovie:"http://localhost:5000/admin/removemovie",
-//   restoreMovie:"http://localhost:5000/admin/restoremovie",
-//   getRestoreMovieByMovieName:"http://localhost:5000/admin/restoremovieByName",
-//   updateMovieStatus:"http://localhost:5000/admin/updatestatus",
-// };
-
 export const environment = {
   production: true,
   Admin: "Raju",
